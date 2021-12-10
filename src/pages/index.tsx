@@ -4,7 +4,10 @@ import Image from "next/image";
 import hero from "../assets/hero.svg";
 import star from "../assets/star.svg";
 import book from "../assets/book.svg";
+import cadastroImg from "../assets/cadastroImg.svg";
+import plataformaImg from "../assets/plataformaImg.svg";
 import { Container } from "@mui/material";
+import * as Yup from "yup";
 import {
   ButtonStyled,
   Cadastro,
@@ -12,6 +15,7 @@ import {
   Introduction,
   Plataforma,
 } from "../styles/pages/Home";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 
 const Home: NextPage = () => {
   return (
@@ -39,15 +43,17 @@ const Home: NextPage = () => {
             <h3>Incentivo ao estudo</h3>
             <hr />
             <p>
-              Ao final de cada ano letivo os melhores alunos recebem presentes
-              como notebooks ou celulares.
+              Ao final de cada ano letivo os melhores alunos iram receber
+              presentes como notebooks ou celulares.
             </p>
           </li>
           <li>
             <div>
               <Image src={star} alt='Estrela' />
             </div>
-            <h3>Utilizando gamificação como método de ensino principal.</h3>
+            <h3>
+              Utilizando gamificação como um dos principais métodos de ensino.
+            </h3>
             <hr />
             <p>
               Com desafios individuais e em grupo o aluno tem mais motivação e
@@ -58,11 +64,13 @@ const Home: NextPage = () => {
             <div>
               <Image src={book} alt='Livro' />
             </div>
-            <h3>Criada pensando na acessibilidade.</h3>
+            <h3>Plataforma criada pensando na acessibilidade.</h3>
             <hr />
             <p>
-              A plataforma foi criada já pensada em atender alunos com
-              necessidades especiais.
+              A plataforma foi criada já pensada em atender os mais diversos
+              alunos e suas necessidades, se houver uma necessidade não
+              atendida, faremos o possível para conseguir dar acesso a educação
+              para o aluno.
             </p>
           </li>
         </ul>
@@ -71,22 +79,30 @@ const Home: NextPage = () => {
         <div className={"c-text-grid"}>
           <hr />
           <h2>Cadastro</h2>
-          <p>
-            Temos dois processos para os cadastros. Primeiro sendo escolas já
-            cadatradas em nosso sistema passam para nós, alunos que eles não
-            consiguiram inserir dentro da escola, por motivos de não ter
-            estrutura adequada para o acesso do aluno ou falta de vagas entre
-            outros motivos. Segundo incrições indivuáis onde os pais passam a
-            nos contatar e passando por todo um processo para podermos entender
-            a sua situação.
-            <br />
-            <br />
-            Para ambos os processos avaliamos a situação em que se encontra o
-            aluno e caso precise ajudamos com o acesso a internet e dispositivos
-            para o acesso a nossa plataforma.
-          </p>
+          <div>
+            <p>
+              Temos dois processos padrões para o cadasteo do aluno. O Primeiro
+              sendo as escolas já cadatradas em nosso sistema, passam para nós
+              os alunos que eles não conseguiram inserir dentro da escola, por
+              motivos de não ter estrutura adequada para o acesso do aluno ou
+              falta de vagas, entre outros motivos. A Segunda forma são as
+              inscrições individuais, onde os pais passam a nos contatar e
+              passando por todo um processo para podermos entender a sua
+              situação.
+            </p>
+            <p>
+              Para ambos os processos avaliamos a situação em que se encontra o
+              aluno e caso precise, ajudamos com o acesso a internet e
+              dispositivos para o acesso a nossa plataforma.
+            </p>
+          </div>
         </div>
-        <div className={"c-image-grid"}></div>
+        <div className={"c-image-grid"}>
+          <Image
+            src={cadastroImg}
+            alt='Um aplicativo para cadrastro dos alunos, com um estudante mexendo no computador ouvindo musica com um headset na parte do app, em baixo do estudante um formulário pedindo o nome completo, data de nascimento e localidade com cidade - Estado do aluno e o email do responsável e um botão para o enviar os dados.'
+          />
+        </div>
       </Cadastro>
       <Plataforma>
         <div className={"c-text-grid"}>
@@ -96,32 +112,84 @@ const Home: NextPage = () => {
           <p>
             Uma plataforma já pensada em acessibilidade para dar suporte aos
             alunos com necessidades especiais, tendo funcionalizades como
-            <strong> sistema de voz</strong> para navegação e{" "}
-            <strong> mudança de cores</strong>.
+            <strong> sistema de voz e leitura de tela</strong> para navegação e
+            <strong> mudança de cores</strong> para visualização.
           </p>
 
           <h4>Gamificação</h4>
           <p>
             A nossa plataforma utiliza da gamificação como principal método de
-            ensino, criando aulas dinâmicas e com maior participação do aluno,
-            utilizando desafios individuáis e em grupo com recompensas entre a
-            turma ajudando a desenvolver o trabalho em equipe.
+            ensino principal, criando aulas dinâmicas e com maior participação
+            do aluno, utilizando desafios individuais e em grupo com recompensas
+            como icones de perfil personalizados entre outros, com isso os
+            desafios em equipe criam uma turma mais proativa e desenvolve o
+            trabalho em equipe. Ao lado temos um exemplo dos desafios
+            individuais e abaixo os em grupos.
           </p>
         </div>
-        <div className={"c-image-grid"}></div>
+        <div className={"c-image-grid"}>
+          <Image
+            src={plataformaImg}
+            alt='Um aplicativo mobile onde o aluno vai fazer seus desafios individuais e reforçar os conhecimentos adquiridos em aula, com uma foto de perfil personalizável pelo aluno, nome do aluno e barra de xp como cabeçalho da aplicação na parte superior do celular, a baixo disso tendo a área da pergunta e respostas com a pergunta no meio do celular, um temporiador mostrando o tempo restante para essa pergunta e as respostas logo a baixo do pergunta, podendo ser tanto multiplá escolha quanto verdadeiro ou falso e na parte mais inferior do celular um botão para enviar a resposta e ir para a próxima pergunta.'
+          />
+        </div>
       </Plataforma>
       <Footer>
         <h2>O seu comentário é bem-vindo</h2>
         <p>
           A nossa plataforma veio com o intuito de dar acesso a educação as
-          pessoas em funerabilidade social, economica ou física, com esse
-          pensamento acreditamos que sempre podemos melhorar e aceita-mos de
-          braços abertos sugestões de melhoria ou locais que podemos dar mais
-          atenção entre outros.
+          pessoas em funerabilidade social, economica, física entre outras, com
+          esse pensamento acreditamos que sempre podemos melhorar e aceita-mos
+          de braços abertos dúvidas e sugestões de melhorias e locais que
+          podemos dar mais atenção em nossa plataforma e serviço. Para isso
+          deixamos um formulário onde pode escolher entre sugestão ou dúvida e
+          enviar para nós, responderemos o mais breve possível. Obrigado desde
+          já 💖.
         </p>
         <div>
-          <input placeholder='Ensira sua mensagem' type='text' />
-          <ButtonStyled variant='contained'>Enviar</ButtonStyled>
+          <Formik
+            initialValues={{ mensagem: "", email: "", typeOfSuggestion: "" }}
+            validationSchema={Yup.object({
+              mensagem: Yup.string()
+                .max(1200, "Must be 1200 characters or less")
+                .required("Required"),
+              typeOfSuggestion: Yup.string().required("Required"),
+              email: Yup.string()
+                .email("Invalid email address")
+                .required("Required"),
+            })}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                console.log("alo");
+                setSubmitting(false);
+              }, 400);
+            }}>
+            <Form>
+              <label htmlFor='typeOfSuggestion'>
+                Qual tipo de mensagem seria ?
+              </label>
+              <Field
+                component='select'
+                id='typeOfSuggestion'
+                name='typeOfSuggestion'
+                multiple={false}>
+                <option value='Dv'>Dúvida</option>
+                <option value='Sj'>Sugestão</option>
+              </Field>
+              <ErrorMessage name='typeOfSuggestion' />
+
+              <label htmlFor='mensagem'>Mensagem</label>
+              <Field name='mensagem' type='text' />
+              <ErrorMessage name='mensagem' />
+
+              <label htmlFor='email'>Email Address</label>
+              <Field name='email' type='email' />
+              <ErrorMessage name='email' />
+
+              <button type='submit'>Submit</button>
+            </Form>
+          </Formik>
         </div>
       </Footer>
     </Container>

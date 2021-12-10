@@ -28,9 +28,11 @@ export const Cadastro = styled("div")`
 
   .c-image-grid {
     grid-area: image;
-    background: #ffdce0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 450px;
+    height: 100%;
   }
 `;
 
@@ -94,6 +96,7 @@ export const Introduction = styled("div")`
       font-size: 58px;
       max-width: 542px;
       color: #252b42;
+      z-index: 10;
     }
 
     .c-image-container {
@@ -117,10 +120,12 @@ export const Introduction = styled("div")`
 
   .c-grid2 {
     grid-area: grid2;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
     height: 100%;
     align-items: center;
+    justify-content: space-between;
     z-index: 100;
     li {
       list-style-type: none;
@@ -194,5 +199,10 @@ export const Plataforma = styled("div")`
 
   .c-image-grid {
     grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 `;
