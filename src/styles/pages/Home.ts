@@ -1,82 +1,5 @@
 import { styled } from "@mui/system";
 import { Button } from "@mui/material";
-export const Cadastro = styled("div")`
-  display: grid;
-  height: 760px;
-  align-items: center;
-  grid: "text image" / 1fr 1fr;
-  gap: 30px;
-  .c-text-grid {
-    grid-area: text;
-    display: flex;
-    gap: 35px;
-    flex-direction: column;
-    hr {
-      border: 0;
-      width: 97px;
-      height: 7px;
-      background: #e74040;
-    }
-    h2 {
-      font-size: 40px;
-      color: #252b42;
-    }
-    p {
-      color: #737373;
-    }
-  }
-
-  .c-image-grid {
-    grid-area: image;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-export const Footer = styled("div")`
-  display: flex;
-  flex-direction: column;
-  height: 500px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-  h2 {
-    font-size: 40px;
-    max-width: 650px;
-  }
-  p {
-    max-width: 653px;
-    color: #737373;
-    font-size: 16px;
-  }
-  div {
-    display: flex;
-
-    input {
-      height: 50px;
-      width: 300px;
-      border: 2px solid #e5e5e5;
-      padding: 5px;
-    }
-    input:focus {
-      outline: none;
-    }
-  }
-`;
-
-export const ButtonStyled = styled(Button)`
-  height: 100%;
-  background: #96bb7c;
-
-  &:hover {
-    background: #96bb7c;
-    filter: brightness(0.9);
-  }
-`;
 
 export const Introduction = styled("div")`
   display: grid;
@@ -164,6 +87,86 @@ export const Introduction = styled("div")`
       }
     }
   }
+
+  @media (max-width: 1200px) {
+    .c-grid1 {
+      .c-image-container {
+        width: 400px;
+        height: 400px;
+        top: 0px;
+      }
+      .c-image-container:after {
+        content: "";
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        background: #fff2f3;
+        right: -20px;
+        border-radius: 2em;
+        z-index: -1;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    display: grid;
+    height: 100%;
+    gap: 0px;
+    padding: 0 0 50px 0;
+    grid:
+      "grid1" 500px
+      "grid2" 1fr;
+
+    .c-grid2 {
+      grid-template-columns: 300px;
+      justify-content: center;
+    }
+  } ;
+`;
+
+export const Cadastro = styled("div")`
+  display: grid;
+  height: 760px;
+  align-items: center;
+  grid: "text image" / 1fr 1fr;
+  gap: 30px;
+  .c-text-grid {
+    grid-area: text;
+    display: flex;
+    gap: 35px;
+    flex-direction: column;
+    hr {
+      border: 0;
+      width: 97px;
+      height: 7px;
+      background: #e74040;
+    }
+    h2 {
+      font-size: 40px;
+      color: #252b42;
+    }
+    p {
+      color: #737373;
+    }
+  }
+
+  .c-image-grid {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+    grid-template-columns: minmax(1fr, 400px);
+    grid: "text" "image";
+    justify-content: center;
+    gap: 50px;
+    height: 100%;
+    padding: 0 0 50px 0;
+  }
 `;
 
 export const Plataforma = styled("div")`
@@ -204,5 +207,118 @@ export const Plataforma = styled("div")`
     align-items: center;
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+    grid: "text" "image";
+    grid-template-columns: minmax(1fr, 400px);
+    justify-content: center;
+    gap: 50px;
+    height: 100%;
+    padding: 0 0 50px 0;
+  }
+`;
+
+export const Footer = styled("div")`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 50px 0;
+  gap: 30px;
+  h2 {
+    font-size: 40px;
+    max-width: 650px;
+  }
+  p {
+    max-width: 653px;
+    color: #737373;
+    font-size: 16px;
+  }
+  div {
+    display: flex;
+
+    input {
+      height: 50px;
+      width: 300px;
+      border: 2px solid #e5e5e5;
+      padding: 5px;
+    }
+    input:focus {
+      outline: none;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 3px solid #e74040;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 600px;
+
+    div {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .c-textarea {
+      padding: 10px;
+      border: 1px solid #252b42;
+      border-radius: 10px;
+    }
+    select {
+      font-size: 14px;
+      border: 1px solid #252b42;
+      outline: none;
+      /* rgba(115, 115, 115, 0.62) */
+    }
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #252b42;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      align-self: center;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    form {
+      max-width: 600px;
+
+      div {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .c-textarea {
+        width: 100%;
+      }
+    }
+  }
+`;
+
+export const ButtonStyled = styled(Button)`
+  height: 100%;
+  background: #96bb7c;
+
+  &:hover {
+    background: #96bb7c;
+    filter: brightness(0.9);
   }
 `;

@@ -6,7 +6,7 @@ import star from "../assets/star.svg";
 import book from "../assets/book.svg";
 import cadastroImg from "../assets/cadastroImg.svg";
 import plataformaImg from "../assets/plataformaImg.svg";
-import { Container } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import * as Yup from "yup";
 import {
   ButtonStyled,
@@ -15,9 +15,24 @@ import {
   Introduction,
   Plataforma,
 } from "../styles/pages/Home";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik, useField } from "formik";
 
 const Home: NextPage = () => {
+  const MyTextArea = ({ label, ...props }: any) => {
+    // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
+    // which we can spread on <input> and alse replace ErrorMessage entirely.
+    const [field, meta] = useField(props);
+    return (
+      <>
+        <label htmlFor={props.id || props.name}>{label}</label>
+        <textarea className='text-area' {...field} {...props} />
+        {meta.touched && meta.error ? (
+          <div className='error'>{meta.error}</div>
+        ) : null}
+      </>
+    );
+  };
+
   return (
     <Container sx={{ marginTop: "100px", maxWidth: "1000px" }}>
       <Head>
@@ -166,28 +181,40 @@ const Home: NextPage = () => {
               }, 400);
             }}>
             <Form>
-              <label htmlFor='typeOfSuggestion'>
-                Qual tipo de mensagem seria ?
-              </label>
-              <Field
-                component='select'
-                id='typeOfSuggestion'
-                name='typeOfSuggestion'
-                multiple={false}>
-                <option value='Dv'>Dúvida</option>
-                <option value='Sj'>Sugestão</option>
-              </Field>
-              <ErrorMessage name='typeOfSuggestion' />
-
-              <label htmlFor='mensagem'>Mensagem</label>
-              <Field name='mensagem' type='text' />
-              <ErrorMessage name='mensagem' />
-
-              <label htmlFor='email'>Email Address</label>
-              <Field name='email' type='email' />
-              <ErrorMessage name='email' />
-
-              <button type='submit'>Submit</button>
+              <div>
+                <label htmlFor='typeOfSuggestion'>
+                  Qual tipo de mensagem seria ?
+                </label>
+                <Field
+                  component='select'
+                  id='typeOfSuggestion'
+                  name='typeOfSuggestion'
+                  multiple={false}>
+                  <option value='Dv'>Dúvida</option>
+                  <option value='Sj'>Sugestão</option>
+                </Field>
+                <ErrorMessage name='typeOfSuggestion' />
+              </div>
+              <div>
+                <label htmlFor='mensagem'>Mensagem</label>
+                <Field
+                  rows='6'
+                  placeholder='Digite sua mensagem aqui.'
+                  className={"c-textarea"}
+                  name='mensagem'
+                  type='text'
+                  as='textarea'
+                />
+                <ErrorMessage name='mensagem' />
+              </div>
+              <div>
+                <label htmlFor='email'>Email</label>
+                <Field name='email' type='email' />
+                <ErrorMessage name='email' />
+              </div>
+              <Button variant={"contained"} type='submit'>
+                Submit
+              </Button>
             </Form>
           </Formik>
         </div>
