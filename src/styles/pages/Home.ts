@@ -2,8 +2,8 @@ import { styled } from "@mui/system";
 import { Button } from "@mui/material";
 
 export const Introduction = styled("div")`
-  display: grid;
   height: 991px;
+  display: grid;
   grid:
     "grid1 grid1"
     "grid2 grid2";
@@ -14,12 +14,11 @@ export const Introduction = styled("div")`
     grid-area: grid1;
     display: flex;
     gap: 30px;
-    z-index: 1;
     h1 {
       font-size: 58px;
       max-width: 542px;
-      color: #252b42;
-      z-index: 10;
+      color: ${(props) => props.theme.palette.secondary.main};
+      z-index: 1000;
     }
 
     .c-image-container {
@@ -28,6 +27,10 @@ export const Introduction = styled("div")`
       position: absolute;
       right: 0px;
       top: -20px;
+      img {
+        background: #fff2f3;
+        border-radius: 10px;
+      }
     }
     .c-image-container:after {
       content: "";
@@ -50,6 +53,7 @@ export const Introduction = styled("div")`
     align-items: center;
     justify-content: space-between;
     z-index: 100;
+
     li {
       list-style-type: none;
       display: flex;
@@ -61,11 +65,12 @@ export const Introduction = styled("div")`
       gap: 20px;
       background: #fff;
       height: 100%;
+
       div {
         display: flex;
         align-content: center;
         justify-content: center;
-        background: #e74040;
+        background: ${(props) => props.theme.palette.primary.main};
         border-radius: 50%;
         width: 72px;
         height: 72px;
@@ -74,15 +79,17 @@ export const Introduction = styled("div")`
       h3 {
         font-size: 20px;
         font-weight: 700;
+        color: ${(props) => props.theme.palette.secondary.main};
       }
+
       hr {
-        background: #e74040;
+        background: ${(props) => props.theme.palette.primary.main};
         width: 50px;
         height: 2px;
         border: 0;
       }
       p {
-        color: #737373;
+        color: ${(props) => props.theme.palette.secondary.light};
         font-size: 14px;
       }
     }
@@ -96,22 +103,16 @@ export const Introduction = styled("div")`
         top: 0px;
       }
       .c-image-container:after {
-        content: "";
         width: 400px;
         height: 400px;
-        position: absolute;
-        background: #fff2f3;
-        right: -20px;
-        border-radius: 2em;
-        z-index: -1;
       }
     }
   }
+
   @media (max-width: 900px) {
-    display: grid;
     height: 100%;
-    gap: 0px;
     padding: 0 0 50px 0;
+
     grid:
       "grid1" 500px
       "grid2" 1fr;
@@ -120,10 +121,60 @@ export const Introduction = styled("div")`
       grid-template-columns: 300px;
       justify-content: center;
     }
-  } ;
+  }
+
+  @media (max-width: 800px) {
+    gap: 50px;
+    grid:
+      "grid1" 500px
+      "grid2" 1fr;
+
+    .c-grid1 {
+      flex-direction: column;
+      gap: 0px;
+      h1 {
+        font-size: 35px;
+      }
+      .c-image-container {
+        max-width: 400px;
+        max-height: 400px;
+        position: static;
+        background: #fff2f3;
+        border-radius: 10px;
+        align-self: end;
+      }
+      .c-image-container:after {
+        background: #fff;
+        width: 0px;
+        height: 0px;
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    .c-grid1 {
+      h1 {
+        font-size: 30px;
+      }
+
+      .c-image-container {
+        width: 100%;
+        background: #fff;
+      }
+      .c-image-container:after {
+        background: #fff;
+      }
+    }
+    .c-grid2 {
+      grid-template-columns: 1fr;
+      li {
+        padding: 15px;
+      }
+    }
+  }
 `;
 
 export const Cadastro = styled("div")`
+  width: 100%;
   display: grid;
   height: 760px;
   align-items: center;
@@ -132,20 +183,21 @@ export const Cadastro = styled("div")`
   .c-text-grid {
     grid-area: text;
     display: flex;
-    gap: 35px;
     flex-direction: column;
+    gap: 35px;
+    max-width: 400px;
     hr {
       border: 0;
       width: 97px;
       height: 7px;
-      background: #e74040;
+      background: ${(props) => props.theme.palette.primary.main};
     }
     h2 {
       font-size: 40px;
-      color: #252b42;
+      color: ${(props) => props.theme.palette.secondary.main};
     }
     p {
-      color: #737373;
+      color: ${(props) => props.theme.palette.secondary.light};
     }
   }
 
@@ -159,7 +211,6 @@ export const Cadastro = styled("div")`
   }
 
   @media (max-width: 900px) {
-    width: 100%;
     grid-template-columns: minmax(1fr, 400px);
     grid: "text" "image";
     justify-content: center;
@@ -171,32 +222,37 @@ export const Cadastro = styled("div")`
 
 export const Plataforma = styled("div")`
   display: grid;
-  gap: 20px;
-  height: 761px;
   grid: "text image" / 1fr 1fr;
   align-items: center;
+  gap: 30px;
+  height: 760px;
 
   .c-text-grid {
     grid-area: text;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 400px;
     hr {
-      background: #e74040;
+      background: ${(props) => props.theme.palette.primary.main};
       width: 97px;
       border: 0;
       height: 7px;
     }
 
     h2 {
-      color: #252b42;
+      color: ${(props) => props.theme.palette.secondary.main};
       font-size: 40px;
     }
 
     h4 {
       font-size: 20px;
       font-weight: 700;
-      color: #252b42;
+      color: ${(props) => props.theme.palette.secondary.main};
+    }
+
+    p {
+      color: ${(props) => props.theme.palette.secondary.light};
     }
   }
 
@@ -223,7 +279,6 @@ export const Plataforma = styled("div")`
 export const Footer = styled("div")`
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -235,56 +290,48 @@ export const Footer = styled("div")`
   }
   p {
     max-width: 653px;
-    color: #737373;
+    color: ${(props) => props.theme.palette.secondary.light};
     font-size: 16px;
-  }
-  div {
-    display: flex;
-
-    input {
-      height: 50px;
-      width: 300px;
-      border: 2px solid #e5e5e5;
-      padding: 5px;
-    }
-    input:focus {
-      outline: none;
-    }
   }
 
   form {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border: 3px solid #e74040;
+    border: 3px solid ${(props) => props.theme.palette.primary.main};
     border-radius: 10px;
     padding: 25px;
-    max-width: 600px;
+    width: 400px;
+    font-size: 20px;
 
     div {
-      font-size: 20px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       gap: 10px;
     }
-    .c-textarea {
-      padding: 10px;
-      border: 1px solid #252b42;
-      border-radius: 10px;
-    }
+
     select {
       font-size: 14px;
-      border: 1px solid #252b42;
+      border: 1px solid ${(props) => props.theme.palette.secondary.main};
       outline: none;
-      /* rgba(115, 115, 115, 0.62) */
+    }
+
+    .c-textarea {
+      padding: 10px;
+      border: 1px solid ${(props) => props.theme.palette.secondary.main};
+      border-radius: 10px;
+      width: 100%;
     }
 
     input {
       border-radius: 10px;
-      border: 1px solid #252b42;
+      border: 1px solid ${(props) => props.theme.palette.secondary.main};
       padding: 10px;
       font-size: 16px;
+      width: 100%;
     }
+
     button {
       align-self: center;
     }
@@ -299,16 +346,7 @@ export const Footer = styled("div")`
 
   @media (max-width: 520px) {
     form {
-      max-width: 600px;
-
-      div {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-      .c-textarea {
-        width: 100%;
-      }
+      width: 100%;
     }
   }
 `;
