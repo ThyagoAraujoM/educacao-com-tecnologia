@@ -1,7 +1,7 @@
 import { styled } from "@mui/system";
 import { Button } from "@mui/material";
 
-export const Introduction = styled("div")`
+export const IntroductionStyle = styled("div")`
   height: 991px;
   display: grid;
   grid:
@@ -173,7 +173,7 @@ export const Introduction = styled("div")`
   }
 `;
 
-export const Cadastro = styled("div")`
+export const CadastroStyle = styled("div")`
   width: 100%;
   display: grid;
   height: 760px;
@@ -185,7 +185,7 @@ export const Cadastro = styled("div")`
     display: flex;
     flex-direction: column;
     gap: 35px;
-    max-width: 400px;
+    max-width: 500px;
     hr {
       border: 0;
       width: 97px;
@@ -220,9 +220,9 @@ export const Cadastro = styled("div")`
   }
 `;
 
-export const Plataforma = styled("div")`
+export const PlataformaStyle = styled("div")`
   display: grid;
-  grid: "text image" / 1fr 1fr;
+  grid: "image text " / 1fr 1fr;
   align-items: center;
   gap: 30px;
   height: 760px;
@@ -232,7 +232,7 @@ export const Plataforma = styled("div")`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 400px;
+    max-width: 500px;
     hr {
       background: ${(props) => props.theme.palette.primary.main};
       width: 97px;
@@ -276,7 +276,7 @@ export const Plataforma = styled("div")`
   }
 `;
 
-export const Footer = styled("div")`
+export const FooterStyle = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -284,6 +284,7 @@ export const Footer = styled("div")`
   text-align: center;
   padding: 0 0 50px 0;
   gap: 30px;
+  padding: 80px 0;
   h2 {
     font-size: 40px;
     max-width: 650px;
@@ -309,6 +310,10 @@ export const Footer = styled("div")`
       flex-direction: column;
       align-items: center;
       gap: 10px;
+
+      .c-error-message {
+        color: #e19393;
+      }
     }
 
     select {
