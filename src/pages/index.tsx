@@ -8,6 +8,7 @@ import { Introduction } from "../components/Introduction";
 import { Plataforma } from "../components/Plataforma";
 import { Cadrastro } from "../components/Cadastro";
 import Formulário from "../components/Formulário";
+import { GroupChallenge } from "../components/GroupChallenge";
 
 const Home: NextPage = () => {
   return (
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
         <Introduction />
         <Cadrastro />
         <Plataforma />
+        <GroupChallenge />
         <Formulário />
       </ThemeProvider>
     </Container>

@@ -22,14 +22,22 @@ export function Plataforma() {
           ensino, criando aulas dinâmicas e com maior participação do aluno,
           utilizando desafios individuais e em grupo com recompensas como ícones
           de perfil personalizados entre outros, com isso os desafios em equipe
-          criam uma turma mais proativa e desenvolve o trabalho em equipe. Ao
-          lado temos um exemplo dos desafios individuais e abaixo os em grupos.
+          criam uma turma proativa e trabalho em equipe. Ao lado temos um
+          exemplo dos desafios individuais e abaixo os em grupos.
         </p>
       </div>
       <div className={"c-image-grid"}>
         <Image
           src={plataformaImg}
-          alt='Um aplicativo mobile onde o aluno vai fazer seus desafios individuais e reforçar os conhecimentos adquiridos em aula, com uma foto de perfil personalizável pelo aluno, nome do aluno e barra de experiência como cabeçalho da aplicação na parte superior do celular, a baixo disso tendo a área da pergunta e respostas com a pergunta no meio do celular, um temporiador mostrando o tempo restante para essa pergunta e as respostas logo a baixo do pergunta, podendo ser tanto multiplá escolha quanto verdadeiro ou falso e na parte mais inferior do celular um botão para enviar a resposta e ir para a próxima pergunta.'
+          alt='Demonstração do aplicativo mobile onde o aluno realiza seus desafios individuais e 
+          reforçar os conhecimentos adquiridos em aula, com uma foto de perfil personalizável 
+          pelo aluno, nome e barra de experiência como cabeçalho da aplicação 
+          na parte superior do celular, a baixo disso tendo a área da pergunta e 
+          respostas com a pergunta no meio do celular, um temporizador mostrando 
+          o tempo restante logo a baixo do
+           pergunta, podendo ser tanto múltipla escolha quanto verdadeiro ou falso e
+            na parte mais inferior um botão para enviar a resposta e
+             ir para a próxima pergunta.'
         />
       </div>
     </PlataformaStyle>

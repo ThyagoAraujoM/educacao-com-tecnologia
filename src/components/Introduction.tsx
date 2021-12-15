@@ -9,7 +9,7 @@ export function Introduction() {
   return (
     <IntroductionStyle>
       <div className={"c-grid1"}>
-        <h1>Dar acesso a educação através da tecnologia.</h1>
+        <h1>Dar acesso à educação através da tecnologia.</h1>
         <div className={"c-image-container"}>
           <Image
             src={hero}
@@ -51,7 +51,7 @@ export function Introduction() {
           <p>
             A plataforma foi criada já pensada em atender os mais diversos
             alunos e suas necessidades, se houver uma necessidade não atendida,
-            faremos o possível para conseguir dar acesso a educação para o
+            faremos o possível para conseguir dar acesso à educação para o
             aluno.
           </p>
         </li>

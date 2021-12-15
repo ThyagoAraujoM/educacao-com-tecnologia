@@ -276,6 +276,24 @@ export const PlataformaStyle = styled("div")`
   }
 `;
 
+export const GroupChallengeStyle = styled("div")`
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  h3 {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 16px;
+    height: 500px;
+  }
+`;
+
 export const FooterStyle = styled("div")`
   display: flex;
   flex-direction: column;

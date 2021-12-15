@@ -10,17 +10,17 @@ export function Cadrastro() {
         <h2>Cadastro</h2>
         <div>
           <p>
-            Temos dois processos padrões para o cadasteo do aluno. O Primeiro
-            sendo as escolas já cadatradas em nosso sistema, passam para nós os
-            alunos que eles não conseguiram inserir dentro da escola, por
-            motivos de não ter estrutura adequada para o acesso do aluno ou
-            falta de vagas, entre outros motivos. A Segunda forma são as
-            inscrições individuais, onde os pais passam a nos contatar e
-            passando por todo um processo para podermos entender a sua situação.
+            Temos dois processos padrões para o cadastro do aluno. O Primeiro
+            sendo as escolas já cadastradas em nosso sistema, passam-nos os
+            alunos que eles não conseguiram inserir na escola, por motivos de
+            não ter estrutura adequada para o acesso do aluno ou falta de vagas,
+            entre outros motivos. A Segunda forma são as inscrições individuais,
+            onde os pais passam a nos contatar e passando por todo um processo
+            para podermos entender a sua situação.
           </p>
           <p>
             Para ambos os processos avaliamos a situação em que se encontra o
-            aluno e caso precise, ajudamos com o acesso a internet e
+            aluno e caso precise, ajudamos com o acesso à internet e
             dispositivos para o acesso a nossa plataforma.
           </p>
         </div>
@@ -28,7 +28,7 @@ export function Cadrastro() {
       <div className={"c-image-grid"}>
         <Image
           src={cadastroImg}
-          alt='Um aplicativo para cadrastro dos alunos, com um estudante mexendo no computador ouvindo musica com um headset na parte do app, em baixo do estudante um formulário pedindo o nome completo, data de nascimento e localidade com cidade - Estado do aluno e o email do responsável e um botão para o enviar os dados.'
+          alt='Demostração do aplicativo para cadastro dos alunos, com um estudante mexendo no computador ouvindo música com um headset na parte do app, em baixo do estudante um formulário pedindo o nome completo, data de nascimento e localidade com cidade - Estado do aluno e o email do responsável e um botão para o enviar os dados.'
         />
       </div>
     </CadastroStyle>

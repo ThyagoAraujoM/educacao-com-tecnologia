@@ -37,8 +37,8 @@ export default function Formulário() {
       <h2>O seu comentário é bem-vindo</h2>
       <p>
         A nossa plataforma veio com o intuito de dar acesso a educação as
-        pessoas em funerabilidade social, economica, física entre outras, com
-        esse pensamento acreditamos que sempre podemos melhorar e aceita-mos de
+        pessoas em vulnerabilidade social, econômica, física entre outras, com
+        esse pensamento acreditamos que sempre podemos melhorar e aceitamos de
         braços abertos dúvidas e sugestões de melhorias e locais que podemos dar
         mais atenção em nossa plataforma e serviço. Para isso deixamos um
         formulário onde pode escolher entre sugestão ou dúvida e enviar para
@@ -69,7 +69,7 @@ export default function Formulário() {
         <Form>
           <div>
             <label htmlFor='typeOfSuggestion'>
-              Escolha qual o tipo de mensagem
+              Escolha qual a categoria da mensagem.
             </label>
             <Field
               aria-required
