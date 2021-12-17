@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 O projeto foi feito em cima do tema "dar acesso a educação através da tecnologia', e com isso criar uma landing page apresentando sua solução. A minha foi uma  uma plataforma de ensino a distância que foi criada para dar acesso a todo tipo de necessidade do aluno, utilizando gamificação como método de ensino principal e tendo desafios em grupos e indivisuáis. O layout foi "eu mesmo" que criei, que no caso foi a parte mais difícil do projeto por que não decidia como criar o layout que cores e etc etc..., acabei que peguei um layout pronto no figma, troquei uns icones aqui e ali, criei os moldes de celular e as fotos dos alunos pegando imagens de outros repositórios. Foi legal a experência de criar o layout enquanto pensava na acessibilidade. E caso tenha algum problema de acessibilidade, me contate para entender, pois ainda estou começando a entender esse mundo.
 
 Clique <a target="_blank" href="https://educacao-com-tecnologia.vercel.app">aqui</a> para acessar a aplicação rodando.
-
+<a target="_blank" href="https://www.figma.com/file/ofRGrBCbZdHEgq59p6LgMR/Educa%C3%A7%C3%A3o-com-tecnologia?node-id=69%3A5241">Layout</a> no figma.
 ## 🚀 Como executar
 
 Clone o projeto e acesse a pasta do mesmo.
